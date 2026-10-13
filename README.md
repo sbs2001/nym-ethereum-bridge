@@ -1,10 +1,12 @@
-# Local NYM direct bridge
+# NYM direct bridge
 
-A local-only Keplr + Ethereum wallet application for native NYM on Nyx → Gravity Bridge → canonical NYM on Ethereum. No app fee, hosted service, private-key entry, or automatic signing. Every state-changing operation is reviewed in the app and approved in the relevant wallet.
+A browser app for moving native NYM on Nyx through Gravity Bridge to canonical NYM on Ethereum. The app is deployed at **https://bridge.nymthesis.xyz**. Connect Keplr and an Ethereum wallet there to use it.
 
-## Run
+The site and its RPC proxy are hosted. Private keys stay in the connected wallet extensions; the app does not ask for seed phrases or private keys. Every state-changing operation is reviewed in the app and approved in the relevant wallet. Cosmos signed transactions are sent through the site's restricted RPC proxy, while Ethereum transactions use the connected wallet's provider.
 
-Node 22.12+ and pnpm are recommended:
+## Run locally
+
+For local development, Node 22.12+ and pnpm are recommended:
 
 ```sh
 cd nym-ethereum-bridge
@@ -13,7 +15,7 @@ pnpm build
 pnpm start
 ```
 
-Open **http://127.0.0.1:8787** in the browser where Keplr and MetaMask are installed. The server deliberately binds only to loopback and accepts that exact host. No cloud deployment is required. Stop it with Ctrl+C. `pnpm dev` runs the development build.
+Open **http://127.0.0.1:8787** in the browser where Keplr and MetaMask are installed. The development server deliberately binds only to loopback and accepts that exact host. Stop it with Ctrl+C. `pnpm dev` runs the development build.
 
 ## Workflow
 
